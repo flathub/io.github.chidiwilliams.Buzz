@@ -16,6 +16,8 @@ finish-args:
   - --filesystem=xdg-download
   - --filesystem=xdg-music
   - --filesystem=xdg-videos
+  # CUDA libraries
+  - --env=LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/lib/python3.12/site-packages/nvidia/cudnn/lib:/app/lib/python3.12/site-packages/nvidia/cublas/lib
 
 modules:
   - buzz-pip-dependencies.json
