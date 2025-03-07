@@ -18,12 +18,14 @@ Install `req2flatpak` by running `pip install req2flatpak`
 2. Export `requirements.txt`
 - `poetry export --without-hashes --format=requirements.txt > requirements.txt`
 
-3. Add desired Buzz version to `requirements.txt`
-- `buzz-captions==1.2.0` 
-
-4. Generate dependency `.json`
+3Generate dependency `.json`
 - `req2flatpak --requirements-file requirements.txt --target-platforms 312-x86_64 > buzz-pip-dependencies.json`
 
-5. Move `buzz-captions` to the main manifest for cleaner and more readable setup
+4. Add / Update `buzz-captions` in the the main manifest. 
 
-6. Build
+5. Build
+```commandline
+flatpak run org.flatpak.Builder --force-clean --sandbox --user --install --install-deps-from=flathub --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=repo builddir io.github.chidiwilliams.Buzz.yml
+```
+
+If some package is missing during the build, add it manually to the `buzz-pip-dependencies.json` file.
