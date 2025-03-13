@@ -18,7 +18,7 @@ Install `req2flatpak` by running `pip install req2flatpak`
 2. Export `requirements.txt`
 - `poetry export --without-hashes --format=requirements.txt > requirements.txt`
 
-3Generate dependency `.json`
+3. Generate dependency `.json`
 - `req2flatpak --requirements-file requirements.txt --target-platforms 312-x86_64 > buzz-pip-dependencies.json`
 
 4. Add / Update `buzz-captions` in the the main manifest. 
