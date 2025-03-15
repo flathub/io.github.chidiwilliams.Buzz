@@ -7,10 +7,15 @@ finish-args:
   - --socket=wayland
   - --socket=fallback-x11
   - --socket=pulseaudio
+  # To save OpenAI API key
   - --talk-name=org.freedesktop.secrets
+  # For NVIDIA GPU acceleration
   - --device=dri
   - --share=network
   - --share=ipc
+  # To load selected system theme
+  - --filesystem=~/.themes:ro
+  # For user to select files to transcribe
   - --filesystem=xdg-desktop
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
@@ -70,5 +75,5 @@ modules:
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/03845d6d906744f422e4a17ccd48d93d1235dd4f/share/applications/io.github.chidiwilliams.Buzz.desktop
         sha256: 3709dc0e614a8e18d441410877318c46ad854d8245e17732c97b89d12c3ca8d8
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/33da226ec4931c06292525ae52473b20a6e01560/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
-        sha256: 1d106779ceac018c72e2f932d56b11cfbe0be989afd95356a1b96fecd21da298
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/e56569a8f9f11a0c06238ed62ef3ed5aa7635214/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
+        sha256: b32301a2bdea9820dd5144a56c608a0dc412d33fec91d2126967ca96262bafdb

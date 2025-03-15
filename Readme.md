@@ -29,3 +29,12 @@ flatpak run org.flatpak.Builder --force-clean --sandbox --user --install --insta
 ```
 
 If some package is missing during the build, add it manually to the `buzz-pip-dependencies.json` file.
+
+## Fix for themes
+
+To fix issue where your selected system theme, for example the dark theme selected in the system is not applied to the app you need to make sure the theme is in user folder `~/.themes`
+
+To copy system themes to the user folder run the following command
+```commandline
+cp -r /usr/share/themes ~/.themes
+```
