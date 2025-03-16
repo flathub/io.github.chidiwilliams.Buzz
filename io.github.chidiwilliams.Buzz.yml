@@ -75,5 +75,5 @@ modules:
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/03845d6d906744f422e4a17ccd48d93d1235dd4f/share/applications/io.github.chidiwilliams.Buzz.desktop
         sha256: 3709dc0e614a8e18d441410877318c46ad854d8245e17732c97b89d12c3ca8d8
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/e56569a8f9f11a0c06238ed62ef3ed5aa7635214/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
-        sha256: b32301a2bdea9820dd5144a56c608a0dc412d33fec91d2126967ca96262bafdb
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/8b5c0bb9dbe6d9afc5658f7cfaab6c0e2414776e/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
+        sha256: df5b9ed2e6c1faae06ec5adb661b4e74249643c542a209014379ac18551ef6bd
