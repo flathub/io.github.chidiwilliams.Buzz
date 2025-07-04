@@ -13,8 +13,7 @@ Install `req2flatpak` by running `pip install req2flatpak`
 1. Prepare `pyptoject.toml` file
 - Remove extra source used for Windows
   - Search for `"torch"` remove `tool.poetry.source` and dependency for `"2.2.1+cu121"`
-- Remove `PyQt6*` to use the Flatpak baseapp
-- Run `poetry lock`
+  - Run `poetry lock`
 
 2. Export `requirements.txt`
 - `poetry export --without-hashes --format=requirements.txt > requirements.txt`
