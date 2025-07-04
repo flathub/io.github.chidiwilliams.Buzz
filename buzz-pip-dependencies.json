@@ -27,8 +27,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/a6/45/f0c2a87e7cae809a58dbf90ecfa4be342414d4b208f47cb97f41fb77eb3f/av-11.0.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-            "sha256": "13790fbb889b955baf885fe3761e923e85537ef414173465ec293177cedb7b99",
+            "url": "https://files.pythonhosted.org/packages/b7/c4/2d9bbc9c42a804c99bc571eeacb2fe1582fe9cfdb726616876cada937d6a/av-15.0.0-cp313-cp313-manylinux_2_28_x86_64.whl",
+            "sha256": "acb4e4aa6bb394d3a9e60feb4cb7a856fc7bac01f3c99019b1d0f11c898c682c",
             "only-arches": [
                 "x86_64"
             ]
