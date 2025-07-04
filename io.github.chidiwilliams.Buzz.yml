@@ -2,13 +2,6 @@ app-id: io.github.chidiwilliams.Buzz
 runtime: org.kde.Platform
 runtime-version: '6.9'
 sdk: org.kde.Sdk
-base: com.riverbankcomputing.PyQt.BaseApp
-base-version: '6.9'
-cleanup-commands:
-  - /app/cleanup-BaseApp.sh
-build-options:
-  env:
-    - BASEAPP_REMOVE_WEBENGINE=1
 command: run-buzz.sh
 finish-args:
   - --socket=wayland
