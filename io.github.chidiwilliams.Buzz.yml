@@ -1,6 +1,6 @@
 app-id: io.github.chidiwilliams.Buzz
 runtime: org.kde.Platform
-runtime-version: '6.7'
+runtime-version: '6.9'
 sdk: org.kde.Sdk
 command: run-buzz.sh
 finish-args:
@@ -13,8 +13,6 @@ finish-args:
   - --device=dri
   - --share=network
   - --share=ipc
-  # To load selected system theme
-  - --filesystem=~/.themes:ro
   # For user to select files to transcribe
   - --filesystem=xdg-desktop
   - --filesystem=xdg-documents
@@ -52,8 +50,8 @@ modules:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} --no-build-isolation buzz-captions
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/23/39/c14ab002bb6ec0181f742d89bc2f17e2013b11283663b8dca06bce971d61/buzz_captions-1.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-        sha256: fe25226b45b1d6cd095028f15e75cfd25339f809586268c008c8e8b0c8d1bc47
+        url: https://files.pythonhosted.org/packages/78/d5/695b129dfa77efa4c7bafa2f92b44769af093d8264efec49fe7a7c1de55f/buzz_captions-1.3.3-py3-none-manylinux_2_34_x86_64.whl
+        sha256: 2c74247c19a3d25e47363f71b1a887065f58b3415d7ccb1e501ee3f9c1d0c72e
 
   - name: Buzz
     buildsystem: simple
@@ -63,6 +61,9 @@ modules:
       - install -Dm644 ${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
       - install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
+
+      # Create directory for KStyle extension
+      - mkdir -p ${FLATPAK_DEST}/share/kstyle
 
     sources:
       - type: file
@@ -75,5 +76,12 @@ modules:
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/03845d6d906744f422e4a17ccd48d93d1235dd4f/share/applications/io.github.chidiwilliams.Buzz.desktop
         sha256: 3709dc0e614a8e18d441410877318c46ad854d8245e17732c97b89d12c3ca8d8
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/8b5c0bb9dbe6d9afc5658f7cfaab6c0e2414776e/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
-        sha256: df5b9ed2e6c1faae06ec5adb661b4e74249643c542a209014379ac18551ef6bd
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/79d8aadf2f38dc865ba8502491521d0c2f6af004/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
+        sha256: e73094d4325ce9ca2f182a4e05acea7d9d4d8a1a68cdbf593aff845788001e55
+
+add-extensions:
+  org.kde.KStyle.Adwaita:
+    directory: share/kstyle
+    version: '6.9'
+    subdirectories: true
+    autodelete: false

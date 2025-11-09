@@ -10,31 +10,29 @@ Use code from https://github.com/chidiwilliams/buzz
 
 Install `req2flatpak` by running `pip install req2flatpak`
 
-1. Prepare `pyptoject.toml` file
-- Remove extra source used for Windows
-  - Search for `"torch"` remove `tool.poetry.source` and dependency for `"2.2.1+cu121"`
-  - Run `poetrty lock`
+1. Get all the dependencies
+- `uv sync`
 
 2. Export `requirements.txt`
-- `poetry export --without-hashes --format=requirements.txt > requirements.txt`
+- `uv pip freeze > requirements.txt`
 
-3. Generate dependency `.json`
+3. Clean requirements file
+- Remove `+cu128` from `torch` and `torchaudio`
+- Remove `-e file:///home/raivis/Code/buzz`
+
+4. Generate dependency `.json`
 - `req2flatpak --requirements-file requirements.txt --target-platforms 312-x86_64 > buzz-pip-dependencies.json`
 
-4. Add / Update `buzz-captions` in the the main manifest. 
+5. Add / Update `buzz-captions` wheel in the main manifest. 
 
-5. Build
+6. Add requirements from non-PyPi / from https://download.pytorch.org/whl/cu128
+- The `+cu128` for `torch` and `torchaudio`
+- `nvidia*`
+
+7. Adjust build command in `buzz-pip-dependencies.json` to install nstall `torch` and `torchaudio` before everything 
+   else `--no-deps` flag.
+
+8. Build
 ```commandline
 flatpak run org.flatpak.Builder --force-clean --sandbox --user --install --install-deps-from=flathub --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=repo builddir io.github.chidiwilliams.Buzz.yml
-```
-
-If some package is missing during the build, add it manually to the `buzz-pip-dependencies.json` file.
-
-## Fix for themes
-
-To fix issue where your selected system theme, for example the dark theme selected in the system is not applied to the app you need to make sure the theme is in user folder `~/.themes`
-
-To copy system themes to the user folder run the following command
-```commandline
-cp -r /usr/share/themes ~/.themes
 ```
