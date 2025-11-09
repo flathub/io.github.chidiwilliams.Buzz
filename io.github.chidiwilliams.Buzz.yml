@@ -13,8 +13,6 @@ finish-args:
   - --device=dri
   - --share=network
   - --share=ipc
-  # To load selected system theme
-  - --filesystem=~/.themes:ro
   # For user to select files to transcribe
   - --filesystem=xdg-desktop
   - --filesystem=xdg-documents
