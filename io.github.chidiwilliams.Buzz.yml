@@ -70,14 +70,14 @@ modules:
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/03845d6d906744f422e4a17ccd48d93d1235dd4f/flatpak/run-buzz.sh
         sha256: 9fd67cb44040c29efcff6660495e1ba22b6acd1e9a344c75d7f4778848ed55f2
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/5edfa276ed9446481bf2b772f7eeba4f9444ac89/share/icons/io.github.chidiwilliams.Buzz.svg
-        sha256: d653a5f92037cf334fd540cd81abfd8be3d15bbc91c761e31003373f2902ebf8
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/20775d345cde780ffe26f600469d21416e15c682/share/icons/io.github.chidiwilliams.Buzz.svg
+        sha256: 0aac4a0dbedc4cac1ecbbee027b08f9fe82a566c502a273074bf44c31de6e14b
       - type: file
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/03845d6d906744f422e4a17ccd48d93d1235dd4f/share/applications/io.github.chidiwilliams.Buzz.desktop
         sha256: 3709dc0e614a8e18d441410877318c46ad854d8245e17732c97b89d12c3ca8d8
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/79d8aadf2f38dc865ba8502491521d0c2f6af004/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
-        sha256: e73094d4325ce9ca2f182a4e05acea7d9d4d8a1a68cdbf593aff845788001e55
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/20775d345cde780ffe26f600469d21416e15c682/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
+        sha256: eecc0af7f804081f9719914437fb54a7e88e706e2b142684b01cd519207beaff
 
 add-extensions:
   org.kde.KStyle.Adwaita:
