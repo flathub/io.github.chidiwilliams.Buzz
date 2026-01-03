@@ -27,10 +27,11 @@ Install `req2flatpak` by running `pip install req2flatpak`
 
 6. Add requirements from non-PyPi / from https://download.pytorch.org/whl/cu129
 - The `+cu129` for `torch` and `torchaudio`, these have to go into separate installation command
-- Also add `numpy` and `pybind11` to the first pip install command.
+- 
 
 7. Adjust build command in `buzz-pip-dependencies.json` to install `torch` and `torchaudio` before everything
-   add `--no-deps` flag.
+   add `--no-deps` flags.
+   Also add `numpy` and `pybind11` to the first pip install command.
 
 8. Build
 ```commandline

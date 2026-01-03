@@ -30,6 +30,7 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://github.com/PortAudio/portaudio/archive/refs/tags/v19.7.0.tar.gz
@@ -47,11 +48,13 @@ modules:
   - name: buzz-captions
     buildsystem: simple
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} --no-build-isolation buzz-captions
+      # Note: Installing with --no-deps to ignore dependency mismatch with nemo-toolkit[asr] for bitsandbytes
+      #       The --no-deps could be removed if some later version of nemo-toolkit[asr] updated bitsandbytes
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} --no-build-isolation --no-deps buzz-captions
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/52/fc/7e76ed909c8c39322ae831ee060dfb89d020431595f2572ae015381d292a/buzz_captions-1.4.1-py3-none-manylinux_2_34_x86_64.whl
-        sha256: 2179f88052a7fd9f6a9c395d5f2487aa6be582524d1b421f7877a70a280a3b77
+        url: https://files.pythonhosted.org/packages/f3/62/a4b7fda2a8635fe1f48a3b9bc748aa911a48bf0a3e7d0089ac0f23e4ad15/buzz_captions-1.4.2-py3-none-manylinux_2_34_x86_64.whl
+        sha256: b458428935743852c0995d0a890f049e616a6e7d92e6fc94330b0757751ec4e5
 
   - name: Buzz
     buildsystem: simple
@@ -76,8 +79,8 @@ modules:
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/03845d6d906744f422e4a17ccd48d93d1235dd4f/share/applications/io.github.chidiwilliams.Buzz.desktop
         sha256: 3709dc0e614a8e18d441410877318c46ad854d8245e17732c97b89d12c3ca8d8
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/20775d345cde780ffe26f600469d21416e15c682/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
-        sha256: eecc0af7f804081f9719914437fb54a7e88e706e2b142684b01cd519207beaff
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/85d70c1e6435b12214f5b01d9ac7528dd23a59f2/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
+        sha256: 3893935f4996320f612ffa0e97c313ac4e9ed803fc30fc7fe09db4efc257ac12
 
 add-extensions:
   org.kde.KStyle.Adwaita:
