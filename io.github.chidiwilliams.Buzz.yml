@@ -53,8 +53,8 @@ modules:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} --no-build-isolation --no-deps buzz-captions
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/f3/62/a4b7fda2a8635fe1f48a3b9bc748aa911a48bf0a3e7d0089ac0f23e4ad15/buzz_captions-1.4.2-py3-none-manylinux_2_34_x86_64.whl
-        sha256: b458428935743852c0995d0a890f049e616a6e7d92e6fc94330b0757751ec4e5
+        url: https://github.com/chidiwilliams/buzz/releases/download/v1.4.2/buzz_captions-1.4.2-py3-none-manylinux_2_34_x86_64.whl
+        sha256: 349fb1861763b33e425223a66649fe965212417eb9cf26697ebe0efeb6a749fa
 
   - name: Buzz
     buildsystem: simple
