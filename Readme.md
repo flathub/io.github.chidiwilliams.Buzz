@@ -27,13 +27,16 @@ Install `req2flatpak` by running `pip install req2flatpak`
 
 6. Add requirements from non-PyPi / from https://download.pytorch.org/whl/cu129
 - The `+cu129` for `torch` and `torchaudio`, these have to go into separate installation command
-- 
 
 7. Adjust build command in `buzz-pip-dependencies.json` to install `torch` and `torchaudio` before everything
-   add `--no-deps` flags.
-   Also add `numpy` and `pybind11` to the first pip install command.
+   add `--no-deps` flags and use reference to *.whl files to find the installable package.
 
-8. Build
+8. Also add `numpy` and `pybind11` to the first pip install command.
+
+9. Add `pygments*.whl` to be installed referencing wheel with `--ignore-installed`.
+   This package is already installed in the builder env, so we need to force reinstall.
+
+10. Build
 ```commandline
 flatpak run org.flatpak.Builder --force-clean --sandbox --user --install --install-deps-from=flathub --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=repo builddir io.github.chidiwilliams.Buzz.yml
 ```
