@@ -1,4 +1,5 @@
 .flatpak-builder/*
 .idea/*
+.claude/*
 repo/*
 requirements.txt
