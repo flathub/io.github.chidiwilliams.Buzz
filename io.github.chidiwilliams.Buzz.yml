@@ -53,8 +53,8 @@ modules:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} --no-build-isolation --no-deps buzz-captions
     sources:
       - type: file
-        url: https://github.com/chidiwilliams/buzz/releases/download/v1.4.2/buzz_captions-1.4.2-py3-none-manylinux_2_34_x86_64.whl
-        sha256: 349fb1861763b33e425223a66649fe965212417eb9cf26697ebe0efeb6a749fa
+        url: https://github.com/chidiwilliams/buzz/releases/download/v1.4.3/buzz_captions-1.4.3-py3-none-manylinux_2_34_x86_64.whl
+        sha256: 4f33d362962f2840e5ae46cc38b884163809c167148b478f99ae63fc8797a332
 
   - name: Buzz
     buildsystem: simple
@@ -79,8 +79,8 @@ modules:
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/03845d6d906744f422e4a17ccd48d93d1235dd4f/share/applications/io.github.chidiwilliams.Buzz.desktop
         sha256: 3709dc0e614a8e18d441410877318c46ad854d8245e17732c97b89d12c3ca8d8
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/85d70c1e6435b12214f5b01d9ac7528dd23a59f2/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
-        sha256: 3893935f4996320f612ffa0e97c313ac4e9ed803fc30fc7fe09db4efc257ac12
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/6f6bc53c5408a420febb7bebe707e08aa8e4478a/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
+        sha256: f1395c3ed8873a7f0b9d47b838de42e69366084ed9f1b5b1eb062431367adb9e
 
 add-extensions:
   org.kde.KStyle.Adwaita:
