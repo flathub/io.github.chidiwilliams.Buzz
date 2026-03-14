@@ -53,8 +53,8 @@ modules:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} --no-build-isolation --no-deps buzz-captions
     sources:
       - type: file
-        url: https://github.com/chidiwilliams/buzz/releases/download/v1.4.3/buzz_captions-1.4.3-py3-none-manylinux_2_34_x86_64.whl
-        sha256: 4f33d362962f2840e5ae46cc38b884163809c167148b478f99ae63fc8797a332
+        url: https://github.com/chidiwilliams/buzz/releases/download/v1.4.4/buzz_captions-1.4.4-py3-none-manylinux_2_34_x86_64.whl
+        sha256: 6994b5bb1f891f475ceb5100503b22af9c70d26e1378f59e16ca7f62e437d22f
 
   - name: Buzz
     buildsystem: simple
@@ -70,8 +70,8 @@ modules:
 
     sources:
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/03845d6d906744f422e4a17ccd48d93d1235dd4f/flatpak/run-buzz.sh
-        sha256: 9fd67cb44040c29efcff6660495e1ba22b6acd1e9a344c75d7f4778848ed55f2
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/1346c68c72e1e80f4d7fc01cc365b1b833e516f8/flatpak/run-buzz.sh
+        sha256: a6a1f5fcd25369bda136f0a11b49cb536d59602ada365735dfa2efa0b8b3c1f9
       - type: file
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/20775d345cde780ffe26f600469d21416e15c682/share/icons/io.github.chidiwilliams.Buzz.svg
         sha256: 0aac4a0dbedc4cac1ecbbee027b08f9fe82a566c502a273074bf44c31de6e14b
@@ -79,8 +79,8 @@ modules:
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/03845d6d906744f422e4a17ccd48d93d1235dd4f/share/applications/io.github.chidiwilliams.Buzz.desktop
         sha256: 3709dc0e614a8e18d441410877318c46ad854d8245e17732c97b89d12c3ca8d8
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/6f6bc53c5408a420febb7bebe707e08aa8e4478a/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
-        sha256: f1395c3ed8873a7f0b9d47b838de42e69366084ed9f1b5b1eb062431367adb9e
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/1346c68c72e1e80f4d7fc01cc365b1b833e516f8/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
+        sha256: 2f28e275928da0ba1de6f0923beb650cd0ac407717534db53ed5fca4fe2a3331
 
 add-extensions:
   org.kde.KStyle.Adwaita:
