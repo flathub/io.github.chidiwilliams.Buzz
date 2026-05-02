@@ -2,7 +2,7 @@ app-id: io.github.chidiwilliams.Buzz
 runtime: org.kde.Platform
 runtime-version: '6.9'
 sdk: org.kde.Sdk
-command: run-buzz.sh
+command: buzz
 finish-args:
   - --socket=wayland
   - --socket=fallback-x11
@@ -59,10 +59,9 @@ modules:
   - name: Buzz
     buildsystem: simple
     build-commands:
-      - install -Dm755 run-buzz.sh ${FLATPAK_DEST}/bin/run-buzz.sh
-
-      - install -Dm644 ${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
-      - install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm644 io.github.chidiwilliams.Buzz.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      - sed -i "s/^Icon=Buzz\$/Icon=${FLATPAK_ID}/" Buzz.desktop
+      - install -Dm644 Buzz.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
 
       # Create directory for KStyle extension
@@ -70,14 +69,11 @@ modules:
 
     sources:
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/1346c68c72e1e80f4d7fc01cc365b1b833e516f8/flatpak/run-buzz.sh
-        sha256: a6a1f5fcd25369bda136f0a11b49cb536d59602ada365735dfa2efa0b8b3c1f9
-      - type: file
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/20775d345cde780ffe26f600469d21416e15c682/share/icons/io.github.chidiwilliams.Buzz.svg
         sha256: 0aac4a0dbedc4cac1ecbbee027b08f9fe82a566c502a273074bf44c31de6e14b
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/03845d6d906744f422e4a17ccd48d93d1235dd4f/share/applications/io.github.chidiwilliams.Buzz.desktop
-        sha256: 3709dc0e614a8e18d441410877318c46ad854d8245e17732c97b89d12c3ca8d8
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/0369146be2f9795b752e4ac00d28256001ab5da9/Buzz.desktop
+        sha256: ec3e417d9d6a425944d936605496200bd573d5432428ca2a863b127988fd9abc
       - type: file
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/1346c68c72e1e80f4d7fc01cc365b1b833e516f8/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
         sha256: 2f28e275928da0ba1de6f0923beb650cd0ac407717534db53ed5fca4fe2a3331
