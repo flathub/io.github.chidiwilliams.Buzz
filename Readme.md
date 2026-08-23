@@ -27,15 +27,11 @@ Install `req2flatpak` by running `pip install req2flatpak`
 
 6. Update `buzz-captions` wheel in the main manifest. 
 
-7. Adjust build command in `buzz-pip-dependencies.json` to install `torch` and `torchaudio` before everything
-   add `--no-deps` flags and use reference to *.whl files to find the installable package.
+7. Adjust build command in `buzz-pip-dependencies.json` to get `torch` and `torchaudio` with `+cu129`.
 
-8. Also add `numpy` and `pybind11` to the first pip install command.
+8. Keep the build dependencies as first installation command.
 
-9. Add `pygments*.whl` to be installed referencing wheel with `--ignore-installed`.
-   This package is already installed in the builder env, so we need to force reinstall.
-
-10. Build
+9. Build
 ```commandline
 flatpak run org.flatpak.Builder --force-clean --sandbox --user --install --install-deps-from=flathub --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=repo builddir io.github.chidiwilliams.Buzz.yml
 ```
