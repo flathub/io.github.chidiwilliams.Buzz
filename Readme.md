@@ -21,12 +21,11 @@ Install `req2flatpak` by running `pip install req2flatpak`
 - Remove `-e file:///home/raivis/Code/buzz`
 
 4. Generate dependency `.json`
-- `req2flatpak --requirements-file requirements.txt --target-platforms 312-x86_64 > buzz-pip-dependencies.json`
+- `req2flatpak --requirements-file requirements.txt --target-platforms 313-x86_64 > buzz-pip-dependencies.json`
 
-5. Add / Update `buzz-captions` wheel in the main manifest. 
+5. Update `io.github.chidiwilliams.Buzz.metainfo.xml` url in the main manifest. 
 
-6. Add requirements from non-PyPi / from https://download.pytorch.org/whl/cu129
-- The `+cu129` for `torch` and `torchaudio`, these have to go into separate installation command
+6. Update `buzz-captions` wheel in the main manifest. 
 
 7. Adjust build command in `buzz-pip-dependencies.json` to install `torch` and `torchaudio` before everything
    add `--no-deps` flags and use reference to *.whl files to find the installable package.

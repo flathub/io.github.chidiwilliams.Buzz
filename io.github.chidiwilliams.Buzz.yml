@@ -1,6 +1,6 @@
 app-id: io.github.chidiwilliams.Buzz
 runtime: org.kde.Platform
-runtime-version: '6.9'
+runtime-version: '6.10'
 sdk: org.kde.Sdk
 command: buzz
 finish-args:
@@ -53,8 +53,8 @@ modules:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} --no-build-isolation --no-deps buzz-captions
     sources:
       - type: file
-        url: https://github.com/chidiwilliams/buzz/releases/download/v1.4.4/buzz_captions-1.4.4-py3-none-manylinux_2_34_x86_64.whl
-        sha256: 6994b5bb1f891f475ceb5100503b22af9c70d26e1378f59e16ca7f62e437d22f
+        url: https://github.com/chidiwilliams/buzz/releases/download/v1.4.5/buzz_captions-1.4.5-py3-none-manylinux_2_34_x86_64.whl
+        sha256: 7b5ab36b0c08b8528875eca8b97bab29f7833859f076645bc0848df27f7f19ad
 
   - name: Buzz
     buildsystem: simple
@@ -69,18 +69,18 @@ modules:
 
     sources:
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/20775d345cde780ffe26f600469d21416e15c682/share/icons/io.github.chidiwilliams.Buzz.svg
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/93559530abcd95393cbe52b478598c93dfc5d1b0/share/icons/io.github.chidiwilliams.Buzz.svg
         sha256: 0aac4a0dbedc4cac1ecbbee027b08f9fe82a566c502a273074bf44c31de6e14b
       - type: file
         url: https://raw.githubusercontent.com/chidiwilliams/buzz/0369146be2f9795b752e4ac00d28256001ab5da9/Buzz.desktop
         sha256: ec3e417d9d6a425944d936605496200bd573d5432428ca2a863b127988fd9abc
       - type: file
-        url: https://raw.githubusercontent.com/chidiwilliams/buzz/1346c68c72e1e80f4d7fc01cc365b1b833e516f8/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
-        sha256: 2f28e275928da0ba1de6f0923beb650cd0ac407717534db53ed5fca4fe2a3331
+        url: https://raw.githubusercontent.com/chidiwilliams/buzz/749001cb170a861cb7adde859e7812cf0811461c/share/metainfo/io.github.chidiwilliams.Buzz.metainfo.xml
+        sha256: 722bc267c5e210636da3b8d8311f8eedd0bead2a1f33681e8b57d709920c4f87
 
 add-extensions:
   org.kde.KStyle.Adwaita:
     directory: share/kstyle
-    version: '6.9'
+    version: '6.10'
     subdirectories: true
     autodelete: false
